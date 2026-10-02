@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-background": "#1b1c1a", "surface-container": "#efeeeb", "outline-variant": "#d0c2d1", "secondary-fixed": "#6ffbbe", "tertiary-container": "#783900", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "inverse-primary": "#e8b3ff", "primary-fixed-dim": "#e8b3ff", "inverse-on-surface": "#f2f0ed", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#ffa567", "tertiary": "#562700", "error": "#ba1a1a", "on-secondary-fixed-variant": "#005236", "on-tertiary-fixed-variant": "#723600", "inverse-surface": "#30312f", "surface": "#fbf9f6", "surface-variant": "#e4e2df", "error-container": "#ffdad6", "surface-bright": "#fbf9f6", "on-error": "#ffffff", "surface-container-low": "#f5f3f0", "primary-fixed": "#f6d9ff", "surface-dim": "#dbdad7", "primary": "#521072", "surface-container-high": "#eae8e5", "secondary": "#006c49", "surface-container-highest": "#e4e2df", "on-secondary": "#ffffff", "secondary-fixed-dim": "#4edea3", "surface-tint": "#8143a1", "on-tertiary-fixed": "#311300", "secondary-container": "#6cf8bb", "background": "#fbf9f6", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb787", "on-primary-fixed-variant": "#672987", "on-secondary-fixed": "#002113", "on-secondary-container": "#00714d", "outline": "#7f7381", "tertiary-fixed": "#ffdcc7", "on-surface-variant": "#4d4450", "on-surface": "#1b1c1a", "on-primary-container": "#e1a2ff", "primary-container": "#6b2d8b", "on-primary-fixed": "#310049" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-tablet": "1.5rem", "gutter": "1.25rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "margin": "1rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "data-tabular-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "data-tabular-lg": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "data-tabular-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "data-tabular-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(107,45,139,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto px-4 pt-5"><div class="flex items-center gap-3 px-3 pb-6"><img alt="Morada Crunch Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wh56D6i-Yr71R63cj5Uk2kiictB9VSLi2hGBMgKhyyHQXfJdiuR2zJjAOYxmwWSTtTbOovMqUY5_wt50Pfsh014u-o3UP-bL89mJgusd93bsdRczIHu5j0Ll6lsGdcmUoUnIXYUWYT6gZs5t1qZJZVA0-SjxuavZWfmkhhEDHs4XK9EmBjOdW8l2zrTwSOrbXf7OpaYr6Ocd7hzXfwJdfPL7jPHDwMds0IrUEXDpCEtokSG5mjnoG0jd8"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary tracking-tight">Morada Crunch</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Camote Gourmet</span></div></div><nav class="flex flex-col gap-1.5" data-active-classes="bg-primary-container text-on-primary font-title-md rounded-xl shadow-[0_2px_8px_rgba(107,45,139,0.18)]"><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 transition-all bg-primary-container text-on-primary font-title-md rounded-xl shadow-[0_2px_8px_rgba(107,45,139,0.18)]" data-path="resumen" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Resumen</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ventas" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span>Ventas</span></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pronostico" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span>Pronóstico</span></div><span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-1.5 py-0.5 rounded-full">IA</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inventario" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Inventario</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="precios" href="#"><span class="material-symbols-outlined text-[20px]">sell</span><span>Precios</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="promociones" href="#"><span class="material-symbols-outlined text-[20px]">redeem</span><span>Promociones</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Configuración</span></a></nav></div><div class="p-4 flex flex-col gap-3 bg-surface-container-low"><div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-[0_1px_3px_rgba(107,45,139,0.04)] flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-secondary-container/50"></span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Planta Lurín</span><span class="font-body-sm text-body-sm text-secondary font-medium">100% Operativa</span></div></div><span class="material-symbols-outlined text-outline-variant text-[18px]">verified</span></div><div class="flex items-center justify-between px-2 py-1"><span class="font-label-sm text-label-sm text-on-surface-variant">Tema Oscuro</span><button class="w-9 h-5 bg-surface-container-highest rounded-full relative p-0.5 transition-colors focus:outline-none" type="button"><span class="block w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm transition-transform"></span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(107,45,139,0.03)] px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-3 flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-[0_1px_2px_rgba(107,45,139,0.03)]" placeholder="Buscar lote, sabor, cliente, SKU..." type="text"/></div><button class="hidden sm:flex items-center gap-2 px-3 py-2 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface rounded-xl font-body-sm text-body-sm whitespace-nowrap shadow-[0_1px_2px_rgba(107,45,139,0.03)] transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span><span>Últimos 30 días (1 May - 30 May 2024)</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></button></div><div class="flex items-center gap-3.5"><button class="flex items-center gap-1.5 px-3.5 py-2 bg-tertiary-container hover:bg-tertiary text-on-tertiary font-title-md text-label-md rounded-xl shadow-[0_2px_4px_rgba(120,57,0,0.18)] transition-all" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="hidden md:inline">Nueva Orden / Reordenar</span></button><div class="relative"><button class="w-9 h-9 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] leading-none flex items-center justify-center font-bold ring-2 ring-surface">3</span></div><div class="flex items-center gap-3 pl-2"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYWboyZQhzeXIMgm7-lMSfo2xoorufRYasqm_yKQruV6cjzZ4mpk9zMa4yBlRmDzPKDMCTGiY0tfR_aucmnXmWcEp0UVzttT5Xng5OdjrPaJPob2CxTjKTBuOfj_LneVwEtORhJ8WfBTp6wvq4I8AglWaJDLard45CBaMKQtG9-TrM4FaM8vm30pyfzFUnQX2ccR7Yi7z2uiQC7ycbj1PL1iAEv-zSLTqq1P_2lZP4uZjBR7PNOy0O"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></div><div class="hidden xl:flex flex-col text-left"><span class="font-title-md text-label-md text-on-surface leading-tight">Carlos Mendoza</span><span class="font-body-sm text-body-sm text-on-surface-variant">Fundador &amp; Gerente General</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="w-full px-6 lg:px-8 py-6 max-w-[1440px] mx-auto"><div class="flex flex-col w-full gap-6">
+<!-- Top Banner / Header de Sección -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex flex-col gap-1.5 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed uppercase tracking-wider">
+          Operaciones Activas
+        </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Sincronizado hace 2 min
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+        Panel General de Operaciones y Ventas
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Supervisa el rendimiento comercial de chips artesanales, demanda proyectada y alertas de abastecimiento en tiempo real.
+      </p>
+</div>
+<!-- Botones de Acción -->
+<div class="flex items-center gap-3 self-start md:self-auto">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-title-md text-label-md rounded-xl shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Ajustar Metas</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-title-md text-label-md rounded-xl shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Descargar Reporte PDF</span>
+</button>
+</div>
+</div>
+<!-- Fila de 4 Tarjetas KPI Principales -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- KPI 1: Ventas del Mes -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ventas del Mes</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">S/ 148,250</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+          +14.2%
+        </span>
+</div>
+<div class="my-3 flex items-center justify-between">
+<div class="w-full h-11">
+<!-- Sparkline Morado Ascendente -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 160 40">
+<defs>
+<lineargradient id="grad-kpi-1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#6B2D8B" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#6B2D8B" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,34 Q 25,32 50,24 T 100,18 T 135,12 T 160,4 L 160,40 L 0,40 Z" fill="url(#grad-kpi-1)"></path>
+<path d="M 0,34 Q 25,32 50,24 T 100,18 T 135,12 T 160,4" fill="none" stroke="#6B2D8B" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="160" cy="4" fill="#6B2D8B" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Meta: S/ 160,000</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">92.6% alcanzado</span>
+</div>
+</div>
+<!-- KPI 2: Ticket Promedio -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ticket Promedio</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">S/ 86.40</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+          +5.8%
+        </span>
+</div>
+<div class="my-3 flex items-center justify-between">
+<div class="w-full h-11">
+<!-- Sparkline Naranja Ámbar Cálido -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 160 40">
+<defs>
+<lineargradient id="grad-kpi-2" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#E87A1E" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#E87A1E" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,28 Q 30,34 60,20 T 110,22 T 140,10 T 160,8 L 160,40 L 0,40 Z" fill="url(#grad-kpi-2)"></path>
+<path d="M 0,28 Q 30,34 60,20 T 110,22 T 140,10 T 160,8" fill="none" stroke="#E87A1E" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="160" cy="8" fill="#E87A1E" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Volumen mensual</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">1,716 pedidos</span>
+</div>
+</div>
+<!-- KPI 3: Stock Bajo / Alerta -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Productos con Stock Bajo</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">4 Ítems</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+          2 Críticos
+        </span>
+</div>
+<div class="my-3 flex items-center justify-between">
+<div class="w-full h-11">
+<!-- Sparkline de Alerta Descendente -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 160 40">
+<defs>
+<lineargradient id="grad-kpi-3" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#BA1A1A" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#BA1A1A" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,10 Q 35,12 70,25 T 120,28 T 160,35 L 160,40 L 0,40 Z" fill="url(#grad-kpi-3)"></path>
+<path d="M 0,10 Q 35,12 70,25 T 120,28 T 160,35" fill="none" stroke="#BA1A1A" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="160" cy="35" fill="#BA1A1A" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-error-container/30 px-3 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-error-container">Urgencia almacén</span>
+<span class="font-label-sm text-label-sm text-error font-bold">Reorden &lt; 48 hrs</span>
+</div>
+</div>
+<!-- KPI 4: Margen de Ganancia -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Margen de Ganancia</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">41.8%</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+          +2.4%
+        </span>
+</div>
+<div class="my-3 flex items-center justify-between">
+<div class="w-full h-11">
+<!-- Sparkline Verde Sólido -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 160 40">
+<defs>
+<lineargradient id="grad-kpi-4" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#006C49" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#006C49" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,26 Q 40,24 80,18 T 120,12 T 160,6 L 160,40 L 0,40 Z" fill="url(#grad-kpi-4)"></path>
+<path d="M 0,26 Q 40,24 80,18 T 120,12 T 160,6" fill="none" stroke="#006C49" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="160" cy="6" fill="#006C49" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Costo prom. unidad</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">S/ 3.25 / bolsa</span>
+</div>
+</div>
+</div>
+<!-- Sección Central (12 Columnas Grid: 8 Izquierda + 4 Derecha) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Columna Izquierda (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Gráfico 1: Ventas Reales vs. Pronóstico de Demanda -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+              Ventas Reales vs. Pronóstico de Demanda
+            </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Proyección algorítmica para los próximos 30 días calendario
+            </span>
+</div>
+<!-- Selector de Vistas -->
+<div class="inline-flex bg-surface-container-high p-1 rounded-xl self-start sm:self-auto" id="chart-granularity">
+<button class="px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">Día</button>
+<button class="px-3 py-1 rounded-lg font-label-sm text-label-sm bg-surface-container-lowest text-primary font-bold shadow-sm" type="button">Semana</button>
+<button class="px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">Mes</button>
+</div>
+</div>
+<!-- Leyenda Interactiva -->
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant font-label-sm text-label-sm pt-1">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface">Ventas Reales</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-1 rounded-full bg-tertiary-container border-b-2 border-dashed border-tertiary-container"></span>
+<span class="text-on-surface">Pronóstico IA (+Modelo ML)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3 bg-primary-fixed/60 rounded"></span>
+<span>Banda de Confianza 95%</span>
+</div>
+</div>
+<!-- Canvas Gráfico SVG Detallado -->
+<div class="relative w-full h-80 bg-surface-container-low rounded-xl p-4 overflow-hidden flex flex-col justify-between">
+<!-- Tooltip Visual Flotante (Fiestas Patrias Peak) -->
+<div class="absolute left-[66%] top-8 -translate-x-1/2 bg-on-background/95 text-surface p-2.5 rounded-xl shadow-xl pointer-events-none flex flex-col gap-1 z-20 backdrop-blur-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[16px]">celebration</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed">Pico Proyectado: Fiestas Patrias</span>
+</div>
+<span class="font-title-md text-label-md font-bold text-surface-container-lowest">S/ 48,920 (+26%)</span>
+<span class="font-body-sm text-[10px] text-surface-dim leading-none">Semana 4 (Julio) • Alta demanda gourmet</span>
+</div>
+<!-- SVG Vector Chart -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 760 220">
+<defs>
+<!-- Banda de Confianza Gradient -->
+<lineargradient id="bandGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#E8B3FF" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#E8B3FF" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<!-- Líneas de Guía de Ejes Horizontales -->
+<line stroke="#E4E2DF" stroke-dasharray="3 3" stroke-width="1" x1="50" x2="740" y1="20" y2="20"></line>
+<line stroke="#E4E2DF" stroke-dasharray="3 3" stroke-width="1" x1="50" x2="740" y1="70" y2="70"></line>
+<line stroke="#E4E2DF" stroke-dasharray="3 3" stroke-width="1" x1="50" x2="740" y1="120" y2="120"></line>
+<line stroke="#E4E2DF" stroke-dasharray="3 3" stroke-width="1" x1="50" x2="740" y1="170" y2="170"></line>
+<!-- Etiquetas Eje Y -->
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="end" x="42" y="24">S/ 50k</text>
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="end" x="42" y="74">S/ 40k</text>
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="end" x="42" y="124">S/ 30k</text>
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="end" x="42" y="174">S/ 20k</text>
+<!-- Área de Banda de Confianza (Semana 2.5 a Semana 4) -->
+<polygon fill="url(#bandGradient)" points="380,110 460,80 550,45 640,30 730,50 730,115 640,95 550,110 460,135 380,140"></polygon>
+<!-- Línea Ventas Reales (Sólido Morado Profundo) -->
+<path d="M 60,150 Q 140,135 220,115 T 380,105" fill="none" stroke="#6B2D8B" stroke-linecap="round" stroke-width="3"></path>
+<!-- Puntos Ventas Reales -->
+<circle class="hover:r-6 cursor-pointer" cx="60" cy="150" fill="#6B2D8B" r="4.5"></circle>
+<circle class="hover:r-6 cursor-pointer" cx="140" cy="138" fill="#6B2D8B" r="4.5"></circle>
+<circle class="hover:r-6 cursor-pointer" cx="220" cy="115" fill="#6B2D8B" r="4.5"></circle>
+<circle class="hover:r-6 cursor-pointer" cx="300" cy="120" fill="#6B2D8B" r="4.5"></circle>
+<circle class="cursor-pointer" cx="380" cy="105" fill="#6B2D8B" r="5.5" stroke="#ffffff" stroke-width="2"></circle>
+<!-- Punto de quiebre de hoy -->
+<line stroke="#6B2D8B" stroke-dasharray="4 4" stroke-width="1.5" x1="380" x2="380" y1="15" y2="185"></line>
+<text fill="#6B2D8B" font-family="Inter" font-size="10" font-weight="600" x="385" y="195">Hoy (Semana 2)</text>
+<!-- Pronóstico IA (Línea punteada Dorada/Ámbar #E87A1E) -->
+<path d="M 380,105 Q 460,95 540,65 T 640,42 T 730,75" fill="none" stroke="#E87A1E" stroke-dasharray="6 6" stroke-linecap="round" stroke-width="3"></path>
+<!-- Puntos Pronóstico -->
+<circle cx="460" cy="98" fill="#E87A1E" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="540" cy="65" fill="#E87A1E" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="640" cy="42" fill="#E87A1E" r="6" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="730" cy="75" fill="#E87A1E" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<!-- Etiquetas Eje X -->
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="middle" x="60" y="210">Sem 1 (1-7 May)</text>
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="middle" x="220" y="210">Sem 2 (8-14 May)</text>
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="middle" x="460" y="210">Sem 3 (15-21 May)</text>
+<text fill="#7F7381" font-family="Inter" font-size="11" text-anchor="middle" x="640" y="210">Sem 4 (22-30 May)</text>
+</svg>
+<!-- Footer Métricas del Modelo -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Precisión histórica del modelo: <strong>96.4% MAPE</strong></span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1 font-semibold" href="#">
+              Explorar Modelo Predictivo
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Gráfico 2: Top 5 Sabores Más Vendidos -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Top 5 Sabores Más Vendidos</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desglose acumulado del mes por presentación en paquete</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-3 py-1 rounded-full bg-surface-container-high">
+            Total bolsas: 132,000 uds.
+          </span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Sabor 1: Sal de Maras -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-primary-container text-on-primary font-bold text-center text-[12px] flex items-center justify-center">1</span>
+<span class="font-title-md text-title-md font-semibold">Sal de Maras Rosada</span>
+<div class="hidden sm:flex items-center gap-1.5 ml-2">
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">40g: 38%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">90g: 44%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">200g: 18%</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">42,500</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(32%)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-3.5 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 32%"></div>
+</div>
+</div>
+<!-- Sabor 2: Ají Amarillo -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-tertiary-container text-on-tertiary font-bold text-center text-[12px] flex items-center justify-center">2</span>
+<span class="font-title-md text-title-md font-semibold">Ají Amarillo Ahumado</span>
+<div class="hidden sm:flex items-center gap-1.5 ml-2">
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">40g: 22%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">90g: 58%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">200g: 20%</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">33,100</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(25%)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-3.5 rounded-full overflow-hidden flex">
+<div class="bg-tertiary-container h-full rounded-full transition-all duration-700" style="width: 25%"></div>
+</div>
+</div>
+<!-- Sabor 3: Original Clásico -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-surface-tint text-on-primary font-bold text-center text-[12px] flex items-center justify-center">3</span>
+<span class="font-title-md text-title-md font-semibold">Original Clásico Dulzor Natural</span>
+<div class="hidden sm:flex items-center gap-1.5 ml-2">
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">40g: 45%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">90g: 40%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">200g: 15%</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">26,400</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(20%)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-3.5 rounded-full overflow-hidden flex">
+<div class="bg-surface-tint h-full rounded-full transition-all duration-700" style="width: 20%"></div>
+</div>
+</div>
+<!-- Sabor 4: Limón y Pimienta -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-secondary text-on-secondary font-bold text-center text-[12px] flex items-center justify-center">4</span>
+<span class="font-title-md text-title-md font-semibold">Limón de Chulucanas &amp; Pimienta</span>
+<div class="hidden sm:flex items-center gap-1.5 ml-2">
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">40g: 50%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">90g: 35%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">200g: 15%</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">18,200</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(14%)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-3.5 rounded-full overflow-hidden flex">
+<div class="bg-secondary-fixed-dim h-full rounded-full transition-all duration-700" style="width: 14%"></div>
+</div>
+</div>
+<!-- Sabor 5: Romero y Ajo -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-md bg-tertiary-fixed-dim text-tertiary font-bold text-center text-[12px] flex items-center justify-center">5</span>
+<span class="font-title-md text-title-md font-semibold">Romero &amp; Ajo Confitado</span>
+<div class="hidden sm:flex items-center gap-1.5 ml-2">
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">40g: 30%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">90g: 45%</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">200g: 25%</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">11,800</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(9%)</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-3.5 rounded-full overflow-hidden flex">
+<div class="bg-tertiary-fixed h-full rounded-full transition-all duration-700" style="width: 9%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Columna Derecha (4 cols): Panel de Alertas Críticas -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<!-- Card Container Alertas -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[22px]">notification_important</span>
+<h2 class="font-headline-sm text-title-md text-on-surface">Alertas Críticas</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+            3 Activas
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Insumos y empaques por debajo del umbral mínimo de seguridad en planta Lurín.
+        </p>
+<!-- Tarjetas de Alerta -->
+<div class="flex flex-col gap-3">
+<!-- Alerta 1: Crítico Camote Morado -->
+<div class="p-3.5 rounded-xl bg-error-container/20 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-error font-bold uppercase tracking-wider">Crítico • Materia Prima</span>
+</div>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">2.5 días cob.</span>
+</div>
+<div>
+<h3 class="font-title-md text-label-md text-on-surface font-semibold">Camote Morado Selección Valle del Mantaro</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Stock actual: <strong class="text-error font-bold">480 kg</strong> (Mín. requerido: 1,200 kg)
+              </p>
+</div>
+<!-- Mini Barra de Cobertura -->
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 40%"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Proveedor: AgroMantaro SAC</span>
+<button class="px-2.5 py-1 bg-error hover:bg-on-error-container text-on-error font-title-md text-label-sm rounded-lg shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">shopping_cart</span>
+<span>Comprar a Proveedor</span>
+</button>
+</div>
+</div>
+<!-- Alerta 2: Sal de Maras Rosada -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-bold uppercase tracking-wider">Advertencia • Sazonador</span>
+</div>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">5 días cob.</span>
+</div>
+<div>
+<h3 class="font-title-md text-label-md text-on-surface font-semibold">Sal de Maras Rosada Fina Gourmet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Stock: <strong class="text-tertiary-container font-semibold">45 kg</strong> (Mínimo: 80 kg)
+              </p>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 56%"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Lote Salinera Cusco</span>
+<button class="px-2.5 py-1 bg-surface-container-highest hover:bg-surface-variant text-on-surface font-title-md text-label-sm rounded-lg transition-colors" type="button">
+                Revisar Pedido
+              </button>
+</div>
+</div>
+<!-- Alerta 3: Empaques Biodegradables -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-bold uppercase tracking-wider">Advertencia • Packaging</span>
+</div>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">4 días cob.</span>
+</div>
+<div>
+<h3 class="font-title-md text-label-md text-on-surface font-semibold">Bolsas Biodegradables 90g Foil Metalizado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Stock: <strong class="text-tertiary-container font-semibold">2,100 uds</strong> (Mínimo: 5,000 uds)
+              </p>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 42%"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Envases del Sur Lima</span>
+<button class="px-2.5 py-1 bg-surface-container-highest hover:bg-surface-variant text-on-surface font-title-md text-label-sm rounded-lg transition-colors" type="button">
+                Revisar Pedido
+              </button>
+</div>
+</div>
+<!-- Tarjeta 4: Promoción por vencer -->
+<div class="p-3.5 rounded-xl bg-primary-fixed/30 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">timer</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Promo Flash 2x1 (200g)</span>
+</div>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-primary text-on-primary font-bold">Vence en 36h</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Campaña canal Supermercados Wong &amp; Vivanda.
+            </p>
+<div class="flex items-center justify-between text-body-sm pt-1">
+<span class="text-on-surface-variant">Meta de ingresos:</span>
+<span class="text-secondary font-bold font-label-md">114% Superada</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-primary font-title-md text-label-md rounded-xl transition-colors flex items-center justify-center gap-1.5" type="button">
+<span>Gestionar Todo el Almacén</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Widget Rápido: Producto Destacado -->
+<div class="bg-primary-container text-on-primary p-5 rounded-xl shadow-md flex flex-col gap-3 relative overflow-hidden">
+<div class="relative z-10 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Garantía Artesanal</span>
+<h3 class="font-title-md text-title-md font-bold text-on-primary">100% Camote Morado Peruano</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high/90">
+            Horneado lento con aceite de coco y sal rosada ancestral. Sin conservantes artificiales ni octógonos.
+          </p>
+</div>
+<div class="relative z-10 flex items-center gap-2 pt-1">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/20 font-label-sm text-label-sm backdrop-blur-sm">Rico en Antocianinas</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/20 font-label-sm text-label-sm backdrop-blur-sm">Gluten Free</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fila Inferior Rápida: Resumen de Plantas y Lotes -->
+<div class="bg-surface-container-lowest p-4 px-6 rounded-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">factory</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-label-md text-on-surface font-bold">Lote #MC-2024-058 en horneado</span>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">En proceso</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Presentación: Ají Amarillo 90g • Control de calidad: <strong class="text-secondary">99.4% óptimo</strong> (Temperatura 165°C continua)
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="flex items-center gap-1.5 px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-title-md text-label-md rounded-xl transition-all whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span>Ver Línea de Producción</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interacción: Selector de granularidad para el gráfico
+  const buttons = document.querySelectorAll('#chart-granularity button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => {
+        b.className = 'px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors';
+      });
+      btn.className = 'px-3 py-1 rounded-lg font-label-sm text-label-sm bg-surface-container-lowest text-primary font-bold shadow-sm';
+    });
+  });
+</script></div></main></div></body></html>
